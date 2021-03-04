@@ -3,12 +3,14 @@ import Home from "./pages/Home";
 import DcHeros from "./pages/DcHeroes";
 import Calendar from "./pages/Calendar";
 import Markdown from "./pages/Markdown";
+import Slider from "./pages/Slider";
 
 const routes = [
     { path: "/", component: Home },
     { path: "/dc-heroes", component: DcHeros },
     { path: "/calendar", component: Calendar },
     { path: "/markdown", component: Markdown },
+    { path: "/slider", component: Slider },
 ]
 
 const router = createRouter({
