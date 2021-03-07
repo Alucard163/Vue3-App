@@ -8,6 +8,8 @@
             <div class="z-30 m-auto bg-white p-2 rounded shadow w-10/12 md:w-1/3">
                 <div class="p-2 border">
                     <h1 class="text-2xl text-center">Login</h1>
+                    <GoogleLogin @close-login-from-google="close" />
+                    <p class="text-center my-3">Or</p>
                     <form class="p-2 my-2" @submit.prevent="submit">
                         <div class="my-4">
                             <label>Email or Username</label>
@@ -45,8 +47,12 @@
 
 <script>
 import firebase from "../utilities/firebase";
+import GoogleLogin from "../components/Login/GoogleLogin";
 
 export default {
+
+    components: { GoogleLogin },
+
     data() {
         return {
             email: "user1@gmail.com",
@@ -54,6 +60,10 @@ export default {
             isLoading: false,
             isLoginOpen: true,
         }
+    },
+
+    mounted() {
+        this.$refs.emailRef.focus();
     },
 
     methods: {
@@ -76,7 +86,7 @@ export default {
         close() {
             this.$emit('close-login');
         //   this.isLoginOpen = false;
-        },
+        }
     }
 }
 </script>

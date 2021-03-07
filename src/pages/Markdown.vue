@@ -41,10 +41,10 @@ export default {
     },
   },
 
-  // mounted() {
-  //     this.debounce = useDebounce();
-  //     this.$refs.markdownTextArea.focus();
-  // },
+  mounted() {
+      // this.debounce = useDebounce();
+      this.$refs.markdownTextArea.focus();
+  },
 }
 </script>
 

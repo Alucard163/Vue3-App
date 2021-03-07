@@ -33,11 +33,13 @@ export default {
     }
   },
 
+  props: {"isLoggedIn": Boolean },
+
   computed: {
-    isLoggedIn() {
-      // return this.$store.state.isLoggedIn;
-       return false;
-    }
+    // isLoggedIn() {
+    //   // return this.$store.state.isLoggedIn;
+    //    return false;
+    // }
   },
 
   methods: {

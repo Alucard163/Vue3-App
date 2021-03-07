@@ -17,6 +17,7 @@
         class="border rounded"
         v-model="newHero"
         placeholder="Type Hero Name Here"
+        ref="newHeroRef"
       />
       <button 
         class="border rounded bg-gradient-to-r from-red-700 to-pink-500 text-white"
@@ -52,6 +53,10 @@ export default {
     remove(index) {
       this.dcHeros = this.dcHeros.filter((hero, i) => i !== index)
     },
+  },
+
+  mounted() {
+      this.$refs.newHeroRef.focus();
   },
 
   computed: {
