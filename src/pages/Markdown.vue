@@ -18,13 +18,14 @@
 <script>
 import marked from "marked";
 import debounce from '../utilities/mixins/debounce';
-// import useDebounce from "../utilities/composition/useDebounce";
+import useDebounce from "../utilities/composition/useDebounce";
 export default {
   mixins:[debounce],
 
   data() {
     return {
       text: "**this is markdown app**",
+      debounce: "",
     }
   },
 
@@ -42,7 +43,7 @@ export default {
   },
 
   mounted() {
-      // this.debounce = useDebounce();
+      this.debounce = useDebounce();
       this.$refs.markdownTextArea.focus();
   },
 }
