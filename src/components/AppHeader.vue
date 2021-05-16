@@ -31,17 +31,15 @@ export default {
         { title: "Slider", to: "/slider-carousel" },
         { title: "Calculator", to: "/calculator" },
         { title: "Modal", to: "/modal" },
+        { title: "Chat", to: "/chat" },
       ]
     }
   },
 
-  props: {"isLoggedIn": Boolean },
-
   computed: {
-    // isLoggedIn() {
-    //   // return this.$store.state.isLoggedIn;
-    //    return false;
-    // }
+    isLoggedIn() {
+      return this.$store.state.isLoggedIn;
+    }
   },
 
   methods: {
@@ -52,8 +50,7 @@ export default {
     },
 
     openLogin() {
-      this.$emit('open-login-modal');
-      // this.$store.commit("setLoginModal", true);
+      this.$store.commit("setLoginModal", true);
     }
   },
 }
